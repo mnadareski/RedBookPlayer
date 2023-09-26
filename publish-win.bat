@@ -1,3 +1,5 @@
+@echo OFF
+
 REM This batch file assumes the following:
 REM - .NET 7.0 (or newer) SDK is installed and in PATH
 REM - 7-zip commandline (7z.exe) is installed and in PATH
