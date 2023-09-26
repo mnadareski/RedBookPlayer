@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
@@ -12,10 +12,8 @@
     <PackageReference Include="Aaru.Decoders" Version="5.3.0" />
     <PackageReference Include="Aaru.Images" Version="5.3.0" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.12" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="NWaves" Version="0.9.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\cscore\CSCore\CSCore.csproj" />
   </ItemGroup>
 
 </Project>

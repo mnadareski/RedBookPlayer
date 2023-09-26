@@ -1,4 +1,4 @@
-using CSCore.SoundOut;
+using NAudio.Wave;
 
 namespace RedBookPlayer.Models.Audio.Linux
 {
@@ -7,14 +7,14 @@ namespace RedBookPlayer.Models.Audio.Linux
         /// <summary>
         /// Sound output instance
         /// </summary>
-        private readonly ALSoundOut _soundOut;
+        private readonly WaveOutEvent _soundOut;
 
         public AudioBackend() { }
 
         public AudioBackend(PlayerSource source)
         {
-            _soundOut = new ALSoundOut(100);
-            _soundOut.Initialize(source);
+            _soundOut = new WaveOutEvent() { Volume = 1.0f };
+            _soundOut.Init(source);
         }
 
         #region IAudioBackend Implementation
