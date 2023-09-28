@@ -1,4 +1,4 @@
 [submodule "cscore"]
 	path = cscore
-	url = https://github.com/sk-zk/cscore.git
+	url = https://github.com/mnadareski/cscore.git
 	branch = netstandard
