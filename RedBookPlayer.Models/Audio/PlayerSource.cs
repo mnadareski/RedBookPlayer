@@ -1,9 +1,10 @@
 using System;
-using NAudio.Wave;
+using CSCore;
+using WaveFormat = CSCore.WaveFormat;
 
 namespace RedBookPlayer.Models.Audio
 {
-    public class PlayerSource : IWaveProvider
+    public class PlayerSource : IWaveSource
     {
         public delegate int ReadFunction(byte[] buffer, int offset, int count);
 
@@ -14,6 +15,7 @@ namespace RedBookPlayer.Models.Audio
         public PlayerSource(ReadFunction read) => _read = read;
 
         public WaveFormat WaveFormat => new WaveFormat();
+        bool IAudioSource.CanSeek    => throw new NotImplementedException();
 
         public long Position
         {

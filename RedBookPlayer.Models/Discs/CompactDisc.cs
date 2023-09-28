@@ -7,7 +7,7 @@ using Aaru.CommonTypes.Interfaces;
 using Aaru.CommonTypes.Structs;
 using Aaru.Decoders.CD;
 using Aaru.Helpers;
-using NAudio.Wave;
+using CSCore.Codecs.WAV;
 using ReactiveUI;
 using static Aaru.Decoders.CD.FullTOC;
 
@@ -282,7 +282,7 @@ namespace RedBookPlayer.Models.Discs
 
             // Build the WAV output
             string filename = Path.Combine(outputDirectory, $"Track {trackNumber.ToString().PadLeft(2, '0')}.wav");
-            using(WaveFileWriter waveWriter = new WaveFileWriter(filename, new WaveFormat()))
+            using(WaveWriter waveWriter = new WaveWriter(filename, new CSCore.WaveFormat()))
             {
                 // TODO: This should also apply de-emphasis as on playback
                 // Should this be configurable? Match the de-emphasis status?
